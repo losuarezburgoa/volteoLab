@@ -1,0 +1,30 @@
+alltheProblem01SCR -> calculatel1h2
+alltheProblem01SCR -> volteolab
+
+volteolab -> obtainslipslopestructure
+volteolab -> obtusescalenetriangfromtopo
+volteolab -> adjusttriangstructure2dipcoordsys
+volteolab -> divideadjustedstructurebaseblocks
+volteolab -> divideadjustblcsinslipeside
+voletolab -> createblcsinadjustedtriangstr
+voletolab -> blockstructuresinunrotsystem
+voletolab -> obtainstableblocs
+voletolab -> positionblockatcrest
+voletolab -> calculaagas
+voletolab -> pesobrutoagas
+voletolab -> pesogeometrico
+voletolab -> coeftransf
+voletolab -> normalstresscalcarray
+voletolab -> fuerzanormalbase
+volteolab -> fuerzacortantebase
+volteolab -> stsoporte
+
+obtainslipslopestructure -> intersecctiontwo2Dlines
+obtusescalenetriangfromtopo -> plotobtusescalenetriang
+adjusttriangstructure2dipcoordsys -> plotobtusescalenetriang
+divideadjustblcsinslipeside -> obtainyoflinegivenx
+divideadjustblcsinslipeside -> plotobtusescalenetriang
+createblcsinadjustedtriangstr -> obtainyoflinegivenx
+positionblockatcrest -> calculaagas
+pesogeometrico -> pesogeometrico2
+normalstresscalcarray -> normalstresscalc

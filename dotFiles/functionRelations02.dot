@@ -1,0 +1,66 @@
+graph G {
+// General appereance
+// increases the separation between nodes
+nodesep =0.8 
+// all nodes will this shape and colour
+node [ color=Black, fontname=Courier, shape=box ] 
+// all the lines look like this
+edge [ color=Black, style=solid ]
+
+// main [label="Circular Slope Stability Toolbox"];
+
+// main program
+pesobrutoagas--stsoporte;
+pesogeometrico--stsoporte;
+coeftransf--stsoporte;
+normalcalcstressarray--stsoporte;
+fgeometrico--stsoporte;
+
+// primary level
+bloqueatcrest--pesobrutoagas;
+calculaagas--pesobrutoagas;
+slendernessratio--pesogeometrico;
+bloqueatcrest--pesogeometrico;
+calculaagas--pesogeometrico;
+slendernessratio--coeftransf;
+bloqueatcrest--coeftransf;
+calculaagas--coeftransf;
+pesogeometrico--normalcalcstressarray;
+coeftransf--normalcalcstressarray;
+nArray--normalcalcstressarray;
+normalcalcstressarray--fgeometrico;
+pesobrutoagas--fgeometrico;
+pesobrutoagas--fuerzacortantebase;
+pesobrutoagas--fuerzanormalbase;
+normalcalcstressarray--fuerzacortantebase;
+normalcalcstressarray--fuerzanormalbase;
+calculatel2h2--obtainslipslopestructure;
+obtainslipslopestructure--obtusescalenetriangfromtopo;
+obtusescalenetriangfromtopo--adjusttriangstructure2dipcoordys;
+adjusttriangstructure2dipcoordys--divideadjustedstructurebaseblocks;
+divideadjustedstructurebaseblocks--divideadjustblcinslipside;
+divideadjustblcinslipside--createblsinadjustedtriangstr;
+createblsinadjustedtriangstr--blocksstructureinunrotsystem;
+blocksstructureinunrotsystem--obtainstableblocs;
+obtainstableblocs--positionblockatcrest;
+// secondary level
+deg2rad--calculaagas;
+rad2deg--calculaagas;
+calculaagas--bloqueatcrest;
+positionblockatcrest--calculaagas;
+}
+/*
+ References: http://www.graphviz.org/content/node-shapes
+ Example: 
+  a--b [color=red, penwidth=3.0, label="0.2", weight="0.2" ];
+ In order to run:
+  dot -Tps funcfuncCssToolbox.dot > funcfuncCssToolbox.eps
+ To export to SVG, first convert EPS to PDF
+  epstopdf funcCssToolbox.eps
+ Then ...
+  pdf2svg funcCssToolbox.pdf funcCssToolbox.svg
+  
+ Or directly:
+ dot -Tsvg funcCssToolbox.dot > funcCssToolbox.svg
+*/
+
